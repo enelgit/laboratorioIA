@@ -1,0 +1,119 @@
+{
+  "title": "Programming with Artificial Intelligence",
+  "subtitle": "Vibe Coding — From Prompt to Product",
+  "tags": [
+    "Windsurf",
+    "Claude / GPT",
+    "Git & GitFlow",
+    "Prompt Engineering",
+    "Multimodality"
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Foundations",
+      "modules": [
+        {
+          "id": "m01",
+          "number": 1,
+          "title": "Introduction to AI-Assisted Development",
+          "completed": true
+        },
+        {
+          "id": "m02",
+          "number": 2,
+          "title": "Windsurf IDE",
+          "completed": true
+        },
+        {
+          "id": "m03",
+          "number": 3,
+          "title": "First Project",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Prompt Engineering & Design",
+      "modules": [
+        {
+          "id": "m07",
+          "number": 7,
+          "title": "Prompt Engineering: Stack and Architecture",
+          "completed": true
+        },
+        {
+          "id": "m08",
+          "number": 8,
+          "title": "AI as Junior Developer",
+          "completed": true
+        },
+        {
+          "id": "m09",
+          "number": 9,
+          "title": "Problem Solving with Logical Reasoning",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Version Control & Deploy",
+      "modules": [
+        {
+          "id": "m04",
+          "number": 4,
+          "title": "Git in AI-Driven Projects"
+        },
+        {
+          "id": "m05",
+          "number": 5,
+          "title": "GitFlow and AI-Assisted Deploy"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Environment & Data",
+      "modules": [
+        {
+          "id": "m10",
+          "number": 10,
+          "title": "Development Environment with AI"
+        },
+        {
+          "id": "m11",
+          "number": 11,
+          "title": "Connecting AI to Data Sources"
+        },
+        {
+          "id": "m12",
+          "number": 12,
+          "title": "Context Injection"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Advanced Techniques",
+      "modules": [
+        {
+          "id": "m13",
+          "number": 13,
+          "title": "Files and Documentation as Context"
+        },
+        {
+          "id": "m14",
+          "number": 14,
+          "title": "Screenshots and Web Context"
+        },
+        {
+          "id": "m15",
+          "number": 15,
+          "title": "Advanced Problem Solving"
+        }
+      ]
+    }
+  ]
+}

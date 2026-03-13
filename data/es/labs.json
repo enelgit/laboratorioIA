@@ -1,0 +1,154 @@
+{
+  "m03": {
+    "title": "Lab 3 — Tus primeros proyectos con Vibe Coding",
+    "objective": "Experimentar el desarrollo asistido por IA desde cero: empezar con un mockup visual y después construir una aplicación full-stack completa.",
+    "duration": "45 min",
+    "exercises": [
+      {
+        "id": "3.1",
+        "title": "Mockup visual: App de Todo List",
+        "type": "prompt",
+        "difficulty": "beginner",
+        "instructions": "Abre un nuevo Copilot Chat (modo agente) y escribe este prompt:\n\n> \"Crea una aplicación web de lista de tareas (Todo List) bonita y moderna usando solo HTML, CSS y JavaScript vanilla en un único archivo. Debe tener: un campo de texto para añadir tareas, una lista que muestre las tareas con un checkbox para marcar como completadas (con efecto tachado), un botón de eliminar por tarea, un contador de tareas pendientes, y un diseño limpio con tema oscuro, bordes redondeados y animaciones suaves.\"\n\nUna vez generado, abre el archivo HTML en tu navegador y pruébalo.\n\nDespués itera con estos prompts:\n- \"Añade categorías (Trabajo, Personal, Urgente) con etiquetas de colores\"\n- \"Añade almacenamiento local para que las tareas persistan al recargar\"\n- \"Añade una barra de filtrado: Todas / Activas / Completadas\"",
+        "starter_code": "",
+        "validation": "Debes tener una app de tareas completamente funcional en el navegador con funcionalidad de añadir, completar y eliminar. Lo clave: un solo prompt puede producir una app completa y visualmente pulida."
+      },
+      {
+        "id": "3.2",
+        "title": "Full-stack: Gestor de Contactos",
+        "type": "coding",
+        "difficulty": "beginner",
+        "instructions": "Empieza un nuevo proyecto. Usa este prompt:\n\n> \"Crea una aplicación Python con FastAPI que exponga una API REST para gestionar una lista de contactos (nombre, email, teléfono). Con endpoints para crear, listar, actualizar y eliminar contactos. Almacena los datos en memoria usando una lista. Incluye un frontend en HTML que consuma esa API — una interfaz limpia de página única con un formulario para añadir contactos y una tabla que muestre todos los contactos con botones de editar y eliminar. Sirve el HTML desde el propio FastAPI.\"\n\nUna vez generado:\n1. Instala dependencias: pip install fastapi uvicorn\n2. Arranca el servidor: python main.py\n3. Abre http://localhost:8000 en tu navegador\n4. Prueba el CRUD completo: añadir, editar y eliminar contactos\n\nDespués itera:\n- \"Añade validación: el email debe tener @ y el teléfono debe ser numérico\"\n- \"Añade una barra de búsqueda que filtre contactos en tiempo real\"",
+        "starter_code": "",
+        "validation": "Un servidor FastAPI funcionando con 4 endpoints (GET, POST, PUT, DELETE) y un frontend HTML que permita operaciones CRUD completas sobre contactos desde el navegador."
+      },
+      {
+        "id": "3.3",
+        "title": "Iterar y mejorar",
+        "type": "prompt",
+        "difficulty": "beginner",
+        "instructions": "Toma el gestor de contactos del ejercicio 3.2 y mejóralo con estos prompts:\n\n> \"Añade un botón para exportar todos los contactos como archivo CSV\"\n\n> \"Añade un toggle de tema oscuro/claro\"\n\n> \"Añade un diálogo de confirmación antes de eliminar un contacto\"\n\nObserva cómo la IA entiende el contexto del código existente y añade funcionalidades de forma incremental sin romper lo que ya funciona.\n\nReflexión: ¿Cuántas líneas de código generó la IA vs. cuántas escribiste tú manualmente?",
+        "starter_code": "",
+        "validation": "La app de contactos debe tener ahora exportación, toggle de tema y confirmación de borrado. Has experimentado el flujo de trabajo iterativo del vibe coding."
+      }
+    ]
+  },
+  "m05": {
+    "title": "Lab 5 — GitFlow y CI/CD con IA",
+    "objective": "Configurar una estrategia de branching profesional y dejar que la IA genere tu pipeline CI/CD.",
+    "duration": "30 min",
+    "exercises": [
+      {
+        "id": "5.1",
+        "title": "Configurar ramas GitFlow",
+        "type": "coding",
+        "difficulty": "intermediate",
+        "instructions": "1. Crea la estructura de ramas:\n```\ngit branch develop\ngit checkout -b feature/user-auth develop\n```\n2. Pide a la IA que implemente la funcionalidad en la rama feature\n3. Cuando termines, haz merge a develop:\n```\ngit checkout develop\ngit merge --no-ff feature/user-auth\n```\n\nObserva el commit de merge en `git log --graph`.",
+        "starter_code": "",
+        "validation": "Debes tener main, develop y al menos una rama feature merged visible en git log --graph."
+      },
+      {
+        "id": "5.2",
+        "title": "CI/CD generado por IA",
+        "type": "prompt",
+        "difficulty": "intermediate",
+        "instructions": "Pide a Cascade:\n\n> \"Genera un workflow de GitHub Actions que: ejecute linting (ruff), ejecute tests (pytest), construya una imagen Docker, y despliegue a un entorno de staging en push a develop. Usa Python 3.11.\"\n\nRevisa el fichero `.github/workflows/ci.yml` generado. ¿Sigue buenas prácticas?",
+        "starter_code": "",
+        "validation": "El fichero de workflow debe tener estructura correcta con jobs, steps, setup de Python apropiado y ejecución de tests."
+      }
+    ]
+  },
+  "m09": {
+    "title": "Lab 9 — Prompt Engineering: de la idea al proyecto",
+    "objective": "Construir prompts estructurados siguiendo la plantilla del Módulo 7 (Declaración, Descripción Funcional, Stack, Pautas Técnicas) para arrancar proyectos reales con IA.",
+    "duration": "40 min",
+    "exercises": [
+      {
+        "id": "9.1",
+        "title": "Prompt estructurado: App de Recetas",
+        "type": "prompt",
+        "difficulty": "beginner",
+        "instructions": "Construye un prompt completo siguiendo las 4 secciones de la plantilla del Módulo 7 para una app de recetas de cocina.\n\nTu prompt debe cubrir:\n\n1. **Declaración del Proyecto**: nombre y tipo de aplicación\n2. **Descripción Funcional**: qué puede hacer el usuario (buscar recetas, filtrar por ingredientes, guardar favoritas, ver tiempo de preparación)\n3. **Stack Tecnológico**: elige y justifica (ej. Frontend: React + Tailwind, Backend: FastAPI, DB: SQLite)\n4. **Pautas Técnicas**: exclusiones, formato de API, estructura de carpetas, manejo de errores\n\nEnvía el prompt a la IA y evalúa:\n- ¿Respetó tu stack?\n- ¿La estructura de carpetas coincide?\n- ¿Usó alguna librería que excluiste?",
+        "starter_code": "# Plantilla base — complétala con tus decisiones:\n\n# 1. DECLARACIÓN DEL PROYECTO\n# Empezamos nuevo proyecto: [NOMBRE]\n# Será una [tipo de aplicación]\n\n# 2. DESCRIPCIÓN FUNCIONAL\n# - La aplicación debe permitir [funcionalidad principal]\n# - Los usuarios pueden [acciones clave]\n# - Entidades principales: [listar]\n\n# 3. STACK TECNOLÓGICO\n# - Frontend: [framework + CSS]\n# - Backend: [lenguaje + framework]\n# - Base de datos: [motor]\n\n# 4. PAUTAS TÉCNICAS\n# - NO uses [exclusiones]\n# - Formato API: [REST JSON / GraphQL]\n# - Estructura: [patrón arquitectónico]\n# - Manejo de errores: [estrategia]",
+        "validation": "El prompt debe tener las 4 secciones completas. La IA debe generar código que respete exactamente el stack y las exclusiones indicadas."
+      },
+      {
+        "id": "9.2",
+        "title": "Prompt estructurado: Sistema de Reservas",
+        "type": "prompt",
+        "difficulty": "intermediate",
+        "instructions": "Construye un prompt estructurado para un sistema de reservas de salas de reunión con requisitos más complejos.\n\nSigue la plantilla del Módulo 7 pero con estas restricciones:\n\n1. **Declaración**: API REST para gestión de reservas de salas\n2. **Descripción Funcional**:\n   - CRUD de salas (nombre, capacidad, equipamiento)\n   - Crear reservas con validación de solapamiento\n   - Ver disponibilidad por día/semana\n   - Cancelar reservas con política de 24h de antelación\n3. **Stack**: Python 3.11 + FastAPI + SQLAlchemy + SQLite. NO uses Django ni Flask.\n4. **Pautas Técnicas**:\n   - Clean Architecture (domain, application, infrastructure)\n   - Respuestas API en formato {data, error, meta}\n   - Tests con pytest\n   - Manejo de errores con excepciones de dominio personalizadas\n\nEnvía a la IA y verifica que:\n- NO usó Django ni Flask\n- Separó las capas correctamente\n- La validación de solapamiento es real, no un placeholder",
+        "starter_code": "",
+        "validation": "La IA debe generar una estructura Clean Architecture con separación de capas, usar FastAPI + SQLAlchemy (sin Django/Flask), e implementar validación real de solapamiento de horarios."
+      },
+      {
+        "id": "9.3",
+        "title": "Comparar: prompt vago vs. prompt estructurado",
+        "type": "prompt",
+        "difficulty": "intermediate",
+        "instructions": "Este ejercicio demuestra por qué las 4 secciones del Módulo 7 importan.\n\n**Paso 1** — Envía este prompt VAGO a la IA:\n> \"Hazme una app para gestionar un inventario de productos\"\n\nAnota qué stack eligió, qué estructura generó y qué asumió por su cuenta.\n\n**Paso 2** — Ahora envía el prompt ESTRUCTURADO:\n> \"Empezamos nuevo proyecto: InventoryPro.\n> Será una API REST con frontend SPA.\n>\n> Descripción funcional:\n> - CRUD de productos (nombre, SKU, precio, stock)\n> - Alertas cuando el stock baje de un umbral configurable\n> - Historial de movimientos de stock (entrada/salida con motivo)\n> - Dashboard con productos bajo stock mínimo\n>\n> Tecnologías:\n> - Frontend: Vue 3 + Composition API + PicoCSS\n> - Backend: Python FastAPI\n> - Base de datos: SQLite para desarrollo\n>\n> Pautas técnicas:\n> - NO uses React ni Angular\n> - API responses en formato: {success: bool, data: any, error: string|null}\n> - Empieza creando los modelos y endpoints, luego el frontend\n> - Manejo de errores: HTTPException con códigos específicos\"\n\n**Paso 3** — Compara ambas respuestas lado a lado:\n- ¿Cuál respetó más tu intención?\n- ¿Cuántas correcciones necesitó cada una?\n- ¿Cuál generó código más usable directamente?",
+        "starter_code": "",
+        "validation": "Debes documentar las diferencias concretas entre ambas respuestas: stack elegido, estructura, asunciones incorrectas del prompt vago vs. precisión del estructurado."
+      },
+      {
+        "id": "9.4",
+        "title": "Prompt iterativo: ampliar un proyecto existente",
+        "type": "prompt",
+        "difficulty": "advanced",
+        "instructions": "Usa el proyecto generado en el ejercicio 9.2 (Sistema de Reservas) y amplíalo con prompts de seguimiento que mantengan la coherencia del stack y arquitectura original.\n\nConstruye 3 prompts de extensión siguiendo la misma estructura:\n\n**Extensión 1 — Notificaciones:**\n> \"Siguiendo la misma arquitectura Clean Architecture del proyecto, añade un sistema de notificaciones por email cuando falten 15 minutos para una reserva. Crea el caso de uso en la capa application, la interfaz del notificador en domain, y la implementación SMTP en infrastructure.\"\n\n**Extensión 2 — Reportes:**\n> \"Añade un endpoint GET /api/reports/usage que devuelva estadísticas de uso por sala (reservas totales, horas ocupadas, tasa de cancelación). Mantén el formato de respuesta {data, error, meta}. Incluye filtros por rango de fechas.\"\n\n**Extensión 3 — Autenticación:**\n> \"Añade autenticación JWT. Los usuarios deben registrarse y loguearse para crear reservas. Las salas solo las puede crear un usuario con rol admin. Mantén la separación de capas: el JWT va en infrastructure, los roles en domain.\"\n\nVerifica que en cada extensión la IA mantiene:\n- El mismo stack (FastAPI + SQLAlchemy)\n- La misma estructura de carpetas\n- El mismo formato de respuestas API\n- Las mismas convenciones de nombres",
+        "starter_code": "",
+        "validation": "Las 3 extensiones deben mantener coherencia total con el proyecto original: mismo stack, misma estructura de capas, mismo formato de API. La IA no debe cambiar de framework ni romper la arquitectura existente."
+      }
+    ]
+  },
+  "m12": {
+    "title": "Lab 12 — Dominio de la inyección de contexto",
+    "objective": "Practicar técnicas avanzadas de inyección de contexto para respuestas precisas de la IA.",
+    "duration": "30 min",
+    "exercises": [
+      {
+        "id": "12.1",
+        "title": "Chunking de contexto",
+        "type": "prompt",
+        "difficulty": "intermediate",
+        "instructions": "Practica la inyección de contexto simulando una base de código grande:\n\n1. Crea un comentario de cabecera: `// File: src/services/order.service.ts`\n2. Proporciona SOLO el servicio relevante a la IA, no el proyecto entero\n3. Incluye las definiciones de interfaz/tipo de las que depende\n4. Pide una modificación específica\n\nClave: mínimo contexto, máxima precisión.",
+        "starter_code": "# Simular inyección de contexto:\n\n# 1. Definición de tipo relevante:\nfrom dataclasses import dataclass\nfrom enum import Enum\n\nclass OrderStatus(Enum):\n    PENDING = \"pending\"\n    CONFIRMED = \"confirmed\"\n    SHIPPED = \"shipped\"\n    DELIVERED = \"delivered\"\n\n@dataclass\nclass Order:\n    id: int\n    customer_id: int\n    status: OrderStatus\n    total: float\n\n# 2. Servicio actual (el que hay que modificar):\nclass OrderService:\n    def __init__(self, repository):\n        self.repository = repository\n    \n    def create_order(self, customer_id: int, items: list) -> Order:\n        # implementación existente\n        pass\n\n# 3. Pide a la IA: \"Añade un método cancel_order que solo permita cancelación si el status es PENDING\"",
+        "validation": "La IA debe usar el enum OrderStatus exacto y respetar el estilo del código existente."
+      },
+      {
+        "id": "12.2",
+        "title": "Análisis de log de errores",
+        "type": "prompt",
+        "difficulty": "intermediate",
+        "instructions": "Pasa este log de error de aspecto real a la IA:\n\n> \"Analiza este log de error. Identifica la causa raíz, el fichero y línea afectados, y propón un fix.\"\n\n```\nTraceback (most recent call last):\n  File \"/app/src/services/payment.py\", line 45, in process_payment\n    result = gateway.charge(amount=order.total, currency=\"USD\")\n  File \"/app/src/infrastructure/stripe_gateway.py\", line 23, in charge\n    response = self.client.charges.create(amount=int(amount * 100))\n  File \"/app/venv/lib/stripe/api.py\", line 89, in create\n    raise InvalidRequestError(\"Amount must be at least $0.50\")\nstripe.error.InvalidRequestError: Amount must be at least $0.50\n```",
+        "starter_code": "",
+        "validation": "La IA debe identificar que pedidos con total < 0.50 causan el error y sugerir validación de entrada."
+      }
+    ]
+  },
+  "m15": {
+    "title": "Lab 15 — Proyecto final: Solución end-to-end",
+    "objective": "Diseñar y construir una solución completa usando todas las técnicas de vibe coding aprendidas.",
+    "duration": "60 min",
+    "exercises": [
+      {
+        "id": "15.1",
+        "title": "Diseño completo de la solución",
+        "type": "prompt",
+        "difficulty": "advanced",
+        "instructions": "Debes construir un **Bot de Standup para equipos** que:\n- Recopile actualizaciones diarias de standup de los miembros vía API REST\n- Almacene: qué hice ayer, qué haré hoy, bloqueos\n- Genere un resumen diario\n- Envíe notificaciones por bloqueos no resueltos\n\nPide a la IA que:\n1. Diseñe la arquitectura del sistema (presenta 2-3 opciones con trade-offs)\n2. Seleccione la mejor opción y justifique\n3. Cree un diagrama Mermaid\n4. Defina el contrato API (OpenAPI)",
+        "starter_code": "",
+        "validation": "Debe tener: comparación de arquitecturas, opción seleccionada con justificación, diagrama Mermaid y spec OpenAPI."
+      },
+      {
+        "id": "15.2",
+        "title": "Implementar con todas las técnicas",
+        "type": "coding",
+        "difficulty": "advanced",
+        "instructions": "Implementa el Bot de Standup usando TODAS las técnicas del curso:\n\n1. ✅ Prompt de arquitectura (Módulo 7)\n2. ✅ Diseño primero, código después (Módulo 8)\n3. ✅ Tests primero — TDD (Módulo 8)\n4. ✅ CONTEXT.md para el proyecto (Módulo 10)\n5. ✅ Historial git limpio (Módulo 4)\n6. ✅ Manejo de errores adecuado (Módulo 9)\n\n¡Esta es tu oportunidad de demostrar el flujo completo de vibe coding!",
+        "starter_code": "# Empieza con el CONTEXT.md:\n\n# CONTEXT.md\n## Standup Bot API\nPython 3.11 + FastAPI + SQLAlchemy + SQLite\nClean Architecture | Repository Pattern\n\n## Endpoints API\n- POST /api/standups — Enviar actualización de standup\n- GET /api/standups/today — Obtener actualizaciones de hoy\n- GET /api/standups/summary — Obtener resumen diario\n- GET /api/blockers — Obtener bloqueos no resueltos\n\n# Después pide a la IA que implemente siguiendo TDD...",
+        "validation": "API completa funcional con tests, arquitectura correcta, commits limpios y documentación."
+      }
+    ]
+  }
+}

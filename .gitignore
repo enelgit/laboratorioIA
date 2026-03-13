@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+connection.yaml
+seed_db.py
+.DS_Store

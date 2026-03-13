@@ -1,0 +1,833 @@
+{
+  "m01": [
+    {
+      "title": "Cos'è lo sviluppo guidato dall'IA?",
+      "content": "Il codice non si scrive più riga per riga — si descrive, si itera e si valida. L'IA agisce come coautore tecnico dello sviluppatore.",
+      "columns": [
+        {
+          "heading": "Copiloti (Autocompletamento)",
+          "icon": "⚡",
+          "items": [
+            "Completano il codice in tempo reale mentre scrivi",
+            "Apprendono dal contesto del file aperto",
+            "Es. GitHub Copilot, Tabnine, Codeium",
+            "Minore latenza, minore autonomia"
+          ]
+        },
+        {
+          "heading": "Agenti autonomi",
+          "icon": "🤖",
+          "items": [
+            "Eseguono attività complete senza supervisione costante",
+            "Possono leggere, creare e modificare file",
+            "Concatenano chiamate a strumenti (terminale, web)",
+            "Es. Cascade in Windsurf, Devin, Aider"
+          ]
+        },
+        {
+          "heading": "Codifica via chat",
+          "icon": "💬",
+          "items": [
+            "Conversazione in linguaggio naturale + codice",
+            "Lo sviluppatore valida e incolla il risultato manualmente",
+            "Ideale per esplorazione e apprendimento",
+            "Es. Claude.ai, ChatGPT, Gemini"
+          ]
+        },
+        {
+          "heading": "Limitazioni attuali",
+          "icon": "⚠️",
+          "items": [
+            "Allucinazioni: codice plausibile ma scorretto",
+            "Finestra di contesto: dimentica l'inizio del repository",
+            "Rischi di sicurezza: credenziali, iniezioni",
+            "Dipendenza eccessiva senza revisione critica"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "IDE, Agente e Modello: tre livelli distinti",
+      "content": "Lo stack del vibe coding ha tre livelli chiaramente separati. Ognuno può essere sostituito indipendentemente.",
+      "columns": [
+        {
+          "heading": "IDE",
+          "icon": "🖥️",
+          "items": [
+            "Ambiente di sviluppo",
+            "Editor, terminale e interfaccia dove lo sviluppatore interagisce con l'agente"
+          ]
+        },
+        {
+          "heading": "Agente",
+          "icon": "🤖",
+          "items": [
+            "Orchestratore autonomo",
+            "Decide azioni, legge file e chiama il modello in un ciclo"
+          ]
+        },
+        {
+          "heading": "Modello",
+          "icon": "🧠",
+          "items": [
+            "Motore LLM",
+            "Genera codice e ragionamento. Non esegue nulla da solo"
+          ]
+        }
+      ],
+      "table": {
+        "headers": [
+          {
+            "label": "IDE",
+            "sub": "Ambiente di sviluppo",
+            "icon": "🖥️"
+          },
+          {
+            "label": "Agente",
+            "sub": "Orchestratore autonomo",
+            "icon": "🤖"
+          },
+          {
+            "label": "Modello",
+            "sub": "Motore LLM",
+            "icon": "🧠"
+          }
+        ],
+        "rows": [
+          {
+            "label": "Stack Windsurf",
+            "color": "#06b6d4",
+            "cells": [
+              {
+                "text": "Windsurf",
+                "color": "#06b6d4"
+              },
+              {
+                "text": "Cascade",
+                "color": "#a855f7"
+              },
+              {
+                "text": "Claude Opus 4.5",
+                "color": "#10b981"
+              }
+            ]
+          },
+          {
+            "label": "Stack Kiro",
+            "color": "#f59e0b",
+            "cells": [
+              {
+                "text": "Kiro di AWS",
+                "color": "#06b6d4"
+              },
+              {
+                "text": "Kiro Agent",
+                "color": "#ec4899"
+              },
+              {
+                "text": "Claude Sonnet 4.5",
+                "color": "#10b981"
+              }
+            ]
+          },
+          {
+            "label": "Stack VS Code",
+            "color": "#8b5cf6",
+            "cells": [
+              {
+                "text": "VS Code",
+                "color": "#06b6d4"
+              },
+              {
+                "text": "GitHub Copilot",
+                "color": "#a855f7"
+              },
+              {
+                "text": "GPT-4o / Sonnet",
+                "color": "#10b981"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "m02": [
+    {
+      "title": "Windsurf: L'IDE che ragiona sul tuo codice",
+      "content": "Windsurf non completa solo il codice — comprende l'intero progetto, esegue comandi e prende decisioni di architettura.",
+      "diagram": {
+        "layers": [
+          {
+            "label": "LLM (Claude / GPT-4o)",
+            "desc": "Motore di ragionamento"
+          },
+          {
+            "label": "Agente Cascade",
+            "desc": "Coordina gli strumenti"
+          },
+          {
+            "label": "Contesto del repo",
+            "desc": "File, dipendenze, cronologia"
+          },
+          {
+            "label": "IDE (Editor)",
+            "desc": "UI, terminale, estensioni"
+          }
+        ]
+      },
+      "columns": [
+        {
+          "heading": "Contesto multi-file",
+          "icon": "📂",
+          "items": [
+            "Legge l'intero repository, non solo il file attivo",
+            "Comprende import, dipendenze e pattern"
+          ]
+        },
+        {
+          "heading": "Azioni nel terminale",
+          "icon": "🖥️",
+          "items": [
+            "Esegue npm install, git, curl… senza uscire dall'IDE",
+            "L'agente chiude il ciclo di feedback"
+          ]
+        },
+        {
+          "heading": "Casi d'uso reali",
+          "icon": "🚀",
+          "items": [
+            "API REST complete, refactoring su larga scala",
+            "Generazione di test, revisioni di PR"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VS Code + GitHub Copilot: l'ecosistema aperto",
+      "content": "VS Code con GitHub Copilot porta lo sviluppo assistito dall'IA nell'editor più popolare al mondo — con modalità agente, supporto multi-modello e integrazione profonda con le estensioni.",
+      "diagram": {
+        "layers": [
+          {
+            "label": "LLM (GPT-4o / Claude / Gemini)",
+            "desc": "Motore modello selezionabile"
+          },
+          {
+            "label": "GitHub Copilot Agent",
+            "desc": "Orchestratore autonomo"
+          },
+          {
+            "label": "Contesto del workspace",
+            "desc": "File, terminale, estensioni, MCP"
+          },
+          {
+            "label": "VS Code (Editor)",
+            "desc": "UI, terminale, marketplace estensioni"
+          }
+        ]
+      },
+      "columns": [
+        {
+          "heading": "Modalità Agente",
+          "icon": "🤖",
+          "items": [
+            "Copilot agisce autonomamente: legge file, esegue comandi, modifica codice",
+            "Ciclo iterativo simile a Cascade ma dentro VS Code"
+          ]
+        },
+        {
+          "heading": "Multi-modello",
+          "icon": "🧠",
+          "items": [
+            "Scegli tra GPT-4o, Claude Sonnet, Gemini e altri",
+            "Cambia modello per attività senza cambiare IDE"
+          ]
+        },
+        {
+          "heading": "Ecosistema di estensioni",
+          "icon": "🧩",
+          "items": [
+            "Migliaia di estensioni: Docker, database, linter, testing",
+            "Server MCP per integrazione di strumenti personalizzati"
+          ]
+        }
+      ]
+    }
+  ],
+  "m03": [
+    {
+      "title": "Da zero a un progetto funzionante in una sessione",
+      "content": "Consiglio: inizia sempre con un prompt di architettura prima di chiedere codice. Cambia tutto.",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Installazione",
+          "desc": "Installa VS Code e l'estensione GitHub Copilot. Accedi con il tuo account GitHub e seleziona un modello (GPT-4o, Claude Sonnet)."
+        },
+        {
+          "number": 2,
+          "label": "Scaffolding",
+          "desc": "Apri la chat di Copilot in modalità agente e chiedi: 'Crea un progetto Node/FastAPI con struttura Clean Architecture.'"
+        },
+        {
+          "number": 3,
+          "label": "README",
+          "desc": "Genera automaticamente il README: descrizione, istruzioni di setup, variabili d'ambiente."
+        },
+        {
+          "number": 4,
+          "label": "Codice base",
+          "desc": "L'IA genera route, modelli, servizi. Tu revisioni la logica e il contratto dell'API."
+        },
+        {
+          "number": 5,
+          "label": "Buone pratiche",
+          "desc": "Cartelle /src /tests /docs. .env.example. .gitignore. Pre-commit hooks."
+        }
+      ]
+    }
+  ],
+  "m04": [
+    {
+      "title": "Controllo versioni quando l'80% del codice lo scrive l'IA",
+      "content": "L'IA genera codice velocemente — senza disciplina nei commit, la cronologia diventa ingestibile. Git resta la tua rete di sicurezza.",
+      "columns": [
+        {
+          "heading": "Git base orientato all'IA",
+          "icon": "📋",
+          "items": [
+            "git diff prima di ogni commit: revisiona ciò che ha generato l'IA",
+            "Commit atomici: un concetto per commit, non 'dump della sessione IA'",
+            "git stash per mettere in pausa i cambiamenti mentre esplori alternative",
+            "git bisect per trovare quale generazione ha rotto qualcosa"
+          ]
+        },
+        {
+          "heading": "Lavorare con codice generato",
+          "icon": "🔍",
+          "items": [
+            "Non fare mai commit senza leggere l'intero diff",
+            "Usa .gitignore per escludere file temporanei dell'IA",
+            "Tagga le versioni funzionanti: git tag v0.1-working",
+            "Annota il prompt che ha originato il cambiamento nel messaggio di commit"
+          ]
+        },
+        {
+          "heading": "Evitare commit spazzatura",
+          "icon": "🧹",
+          "items": [
+            "Squash prima del merge: consolida le sessioni di vibe coding",
+            "Conventional Commits: feat:, fix:, refactor:, chore:",
+            "Hook di pre-commit: linting e test prima di committare",
+            "Code review in coppia: l'umano revisiona ciò che ha generato l'IA"
+          ]
+        }
+      ]
+    }
+  ],
+  "m05": [
+    {
+      "title": "Branching professionale e delivery continua assistita dall'IA",
+      "content": "IA + CI/CD: chiedi a Cascade di generare automaticamente il workflow di GitHub Actions, Dockerfile e script di deploy.",
+      "branches": [
+        {
+          "name": "main",
+          "color": "#e74c3c",
+          "desc": "Solo release stabili. L'IA non tocca mai main direttamente."
+        },
+        {
+          "name": "develop",
+          "color": "#3498db",
+          "desc": "Branch di integrazione. L'IA propone merge qui."
+        },
+        {
+          "name": "feature",
+          "color": "#2ecc71",
+          "desc": "Un branch per funzionalità. L'IA lavora nel proprio branch feature."
+        },
+        {
+          "name": "hotfix",
+          "color": "#f39c12",
+          "desc": "Branch urgente da main. L'IA genera il fix, l'umano approva."
+        }
+      ]
+    },
+    {
+      "title": "GitFlow: flusso dei branch e deploy per ambienti",
+      "content": "Ogni branch corrisponde a un ambiente. Le modifiche fluiscono da feature → develop → QA → main, passando per la validazione in ogni fase prima di avanzare.",
+      "flow_diagram": {
+        "description": "Flusso di promozione del codice tra branch e ambienti",
+        "steps": [
+          {
+            "id": 1,
+            "branch": "feature/*",
+            "color": "#2ecc71",
+            "action": "Sviluppo della funzionalità",
+            "detail": "Lo sviluppatore (con l'aiuto dell'IA) lavora sul proprio branch feature",
+            "arrow": "merge → develop"
+          },
+          {
+            "id": 2,
+            "branch": "develop",
+            "color": "#3498db",
+            "action": "Merge in develop + deploy in DEV",
+            "detail": "Si fa merge della feature in develop. Viene deployato automaticamente nell'ambiente di sviluppo per i test iniziali.",
+            "environment": "🖥️ Ambiente DEV",
+            "check": "✅ Verificare che tutto funzioni correttamente",
+            "arrow": "merge → QA"
+          },
+          {
+            "id": 3,
+            "branch": "qa",
+            "color": "#9b59b6",
+            "action": "Merge in QA + deploy in QA",
+            "detail": "Se i test in DEV hanno successo, si fa merge nel branch QA. Viene deployato nell'ambiente QA per test più rigorosi e validazione.",
+            "environment": "🧪 Ambiente QA",
+            "check": "✅ Test di integrazione, revisione della qualità",
+            "arrow": "merge → main"
+          },
+          {
+            "id": 4,
+            "branch": "main",
+            "color": "#e74c3c",
+            "action": "Merge in main + deploy in PRODUZIONE",
+            "detail": "Una volta validato in QA, si fa merge in main (produzione). Viene deployato nell'ambiente di produzione con la versione stabile.",
+            "environment": "🚀 Ambiente PRODUZIONE",
+            "check": "✅ Release stabile, disponibile per gli utenti"
+          }
+        ],
+        "summary": "feature → develop (DEV) → qa (QA) → main (PROD)"
+      },
+      "columns": [
+        {
+          "heading": "Perché questo flusso?",
+          "icon": "💡",
+          "items": [
+            "Ogni ambiente funge da filtro di qualità",
+            "I bug vengono rilevati prima di arrivare in produzione",
+            "Permette validazione progressiva: DEV → QA → PROD",
+            "Il team QA lavora in un ambiente isolato e stabile"
+          ]
+        },
+        {
+          "heading": "Regole chiave",
+          "icon": "📏",
+          "items": [
+            "Non si fa mai push diretto su main o QA",
+            "Si promuove solo codice che ha superato i test dell'ambiente precedente",
+            "I merge vanno sempre in una direzione: develop → qa → main",
+            "Gli hotfix sono l'eccezione: partono direttamente da main e vengono riportati in develop"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GitFlow: diagramma dei branch e degli ambienti",
+      "content": "Visione completa del modello di branching. Ogni branch è mappato a un ambiente e le modifiche avanzano solo quando superano la validazione dell'ambiente precedente.",
+      "branch_diagram": {
+        "main_flow": [
+          { "branch": "feature/*", "color": "#2ecc71", "env": null, "desc": "Sviluppo della funzionalità" },
+          { "branch": "develop", "color": "#3498db", "env": "🖥️ DEV", "desc": "Integrazione e test" },
+          { "branch": "qa", "color": "#9b59b6", "env": "🧪 QA", "desc": "Validazione della qualità" },
+          { "branch": "main", "color": "#e74c3c", "env": "🚀 PROD", "desc": "Produzione stabile" }
+        ],
+        "hotfix": {
+          "branch": "hotfix/*",
+          "color": "#f39c12",
+          "desc": "Correzione urgente",
+          "flow": "main → hotfix → main + develop"
+        }
+      }
+    }
+  ],
+  "m07": [
+    {
+      "title": "Come guidare l'IA a usare IL TUO stack tecnologico",
+      "content": "Senza contesto, l'IA sceglie lo stack più popolare di internet. Con il prompt adeguato, rispetta le tue decisioni tecniche.",
+      "prompts": [
+        {
+          "label": "Prompt di Stack",
+          "icon": "🛠️",
+          "text": "\"Usa Python 3.11 + FastAPI + SQLAlchemy + PostgreSQL. NON usare Django. Struttura il progetto con Clean Architecture: domain, application, infrastructure, interfaces.\""
+        },
+        {
+          "label": "Prompt di Architettura",
+          "icon": "🏗️",
+          "text": "\"Progetta prima il diagramma dei livelli prima di scrivere codice. Separa la logica di business dalla persistenza. I servizi non devono importare modelli ORM direttamente.\""
+        },
+        {
+          "label": "Applicare i pattern",
+          "icon": "📐",
+          "text": "\"Applica DDD: entità, aggregati, oggetti valore, repository. Usa eventi di dominio per comunicare cambiamenti tra contesti delimitati.\""
+        }
+      ]
+    },
+    {
+      "title": "Template di Prompt per Nuovi Progetti",
+      "content": "Inizia sempre un nuovo progetto con un prompt strutturato. Questo template assicura che l'IA comprenda tutto il tuo contesto fin dal primo messaggio.",
+      "prompts": [
+        {
+          "icon": "🚀",
+          "label": "1. Dichiarazione del Progetto",
+          "text": "Iniziamo un nuovo progetto: [NOME DEL PROGETTO]\nSarà una [app web / API / app mobile / strumento CLI]."
+        },
+        {
+          "icon": "📋",
+          "label": "2. Descrizione Funzionale",
+          "text": "Descrizione funzionale:\n- L'applicazione deve permettere [funzionalità principale]\n- Gli utenti possono [azioni chiave dell'utente]\n- Il sistema deve [comportamenti attesi]\n- Entità principali: [elencare entità e relazioni]"
+        },
+        {
+          "icon": "🛠️",
+          "label": "3. Stack Tecnologico",
+          "text": "Tecnologie:\n- Frontend: [React / Vue / Vanilla JS / ecc.] con [framework CSS]\n- Backend: [Python FastAPI / Node Express / ecc.]\n- Database: [PostgreSQL / MongoDB / in memoria]\n- Altro: [Docker, Redis, ecc.]"
+        },
+        {
+          "icon": "⚙️",
+          "label": "4. Linee Guida Tecniche",
+          "text": "Linee guida tecniche:\n- NON usare [librerie/pattern esclusi]\n- Tutte le risposte dell'API devono seguire [formato]\n- Inizia con [punto di ingresso / struttura cartelle]\n- Gestione errori: [strategia]\n- L'app deve [requisito non funzionale chiave]"
+        }
+      ],
+      "columns": [
+        {
+          "heading": "Perché funziona",
+          "icon": "💡",
+          "items": [
+            "Elimina l'ambiguità dal primo messaggio",
+            "L'IA genera codice allineato con i tuoi vincoli reali",
+            "Risparmia ore di correzioni e andirivieni"
+          ]
+        },
+        {
+          "heading": "Consigli pro",
+          "icon": "🎯",
+          "items": [
+            "Sii specifico: 'FastAPI 0.115' batte 'backend Python'",
+            "Menziona le esclusioni esplicitamente: 'NON usare SQLAlchemy'",
+            "Definisci il comportamento iniziale: 'Avvia il server sulla porta 8000'"
+          ]
+        }
+      ]
+    }
+  ],
+  "m08": [
+    {
+      "title": "Programmazione guidata dall'IA: design prima del codice",
+      "content": "L'errore più comune: chiedere codice prima di concordare il design. L'IA è il miglior junior al mondo se sai dirigerla.",
+      "columns": [
+        {
+          "heading": "Design prima",
+          "icon": "🏗️",
+          "items": [
+            "Chiedi un diagramma delle classi/sequenza prima del codice",
+            "Valida l'architettura con il team",
+            "Solo allora chiedi l'implementazione",
+            "Evita refactoring costosi"
+          ]
+        },
+        {
+          "heading": "Test prima (TDD)",
+          "icon": "🧪",
+          "items": [
+            "'Scrivi test unitari prima del codice'",
+            "I test fungono da specifica eseguibile",
+            "L'IA implementa per superare i test",
+            "Copertura automatica dall'inizio"
+          ]
+        },
+        {
+          "heading": "Auto documentazione",
+          "icon": "📄",
+          "items": [
+            "'Genera docstring in formato Google/NumPy'",
+            "README, spec OpenAPI, diagrammi Mermaid",
+            "Changelog automatico dai commit",
+            "Documentazione sempre aggiornata"
+          ]
+        },
+        {
+          "heading": "Role Prompting",
+          "icon": "🎭",
+          "items": [
+            "'Agisci come Architetto Senior: revisiona questo design'",
+            "'Come Esperto di Sicurezza: trova le vulnerabilità'",
+            "'Come Ingegnere QA: scrivi i casi di test'",
+            "Cambia prospettiva in base all'obiettivo"
+          ]
+        }
+      ]
+    }
+  ],
+  "m09": [
+    {
+      "title": "Debug e refactoring guidati dall'IA",
+      "content": "Chain-of-thought: chiedendo un ragionamento esplicito, l'IA commette fino al 40% di errori in meno su problemi complessi.",
+      "prompts": [
+        {
+          "label": "Debug passo dopo passo",
+          "icon": "🐛",
+          "text": "\"Analizza questo errore passo dopo passo. Prima identifica il tipo di errore, poi localizza la riga di origine, quindi traccia il flusso di esecuzione fino al punto di fallimento.\""
+        },
+        {
+          "label": "Refactoring spiegato",
+          "icon": "🔄",
+          "text": "\"Refactorizza questa funzione. Spiega ogni modifica che fai e perché migliora la leggibilità o le prestazioni.\""
+        },
+        {
+          "label": "Caccia attiva ai bug",
+          "icon": "🎯",
+          "text": "\"Agisci come esperto QA. Revisiona questo codice cercando: errori logici, casi limite non coperti, possibili null pointer e condizioni di race.\""
+        }
+      ]
+    }
+  ],
+  "m10": [
+    {
+      "title": "Configura il tuo workspace perché l'IA capisca tutto",
+      "content": "L'IA è tanto buona quanto il contesto che le dai. Un ambiente ben documentato moltiplica la qualità delle risposte.",
+      "columns": [
+        {
+          "heading": "Configurazione del workspace",
+          "icon": "⚙️",
+          "items": [
+            "Crea un CONTEXT.md nella root: descrivi il progetto, lo stack e le convenzioni",
+            "Usa .windsurfrules per le regole permanenti dell'agente",
+            "Definisci i percorsi chiave: src, tests, config",
+            "Includi esempi reali dello stile di codice atteso"
+          ]
+        },
+        {
+          "heading": "Variabili d'ambiente",
+          "icon": "🔑",
+          "items": [
+            ".env.example documentato con tutte le variabili",
+            "Non passare mai valori reali di API key all'IA",
+            "Descrivi lo scopo di ogni variabile nei commenti",
+            "Usa direnv o dotenv per il caricamento automatico locale"
+          ]
+        },
+        {
+          "heading": "Riproducibilità",
+          "icon": "🐳",
+          "items": [
+            "Docker Compose per tutta l'infrastruttura locale",
+            "Makefile con comandi standard: make dev, make test",
+            "Versioni fissate: requirements.txt, package-lock.json",
+            "devcontainer.json per ambienti identici nel team"
+          ]
+        },
+        {
+          "heading": "Descrivere l'ambiente all'IA",
+          "icon": "📝",
+          "items": [
+            "All'inizio della sessione: 'Siamo su Python 3.11, Docker, macOS ARM'",
+            "Includi l'output di uname -a, python --version nel contesto",
+            "Menziona le limitazioni: nessun accesso a internet, nessun sudo",
+            "L'IA adatta i suoi comandi e percorsi all'ambiente reale"
+          ]
+        }
+      ]
+    }
+  ],
+  "m11": [
+    {
+      "title": "Generare codice su dati reali",
+      "content": "L'IA può generare query, migrazioni e trasformazioni — ma ha bisogno di conoscere lo schema esatto dei tuoi dati.",
+      "columns": [
+        {
+          "heading": "Database relazionali",
+          "icon": "🗄️",
+          "items": [
+            "Passa il DDL completo: CREATE TABLE users (...)",
+            "Esporta lo schema con \\d+ (psql) o SHOW CREATE TABLE",
+            "Includi indici e chiavi esterne — l'IA li usa per query ottimali",
+            "Chiedi query spiegate: 'genera e spiega ogni join'",
+            "Richiedi migrazioni automatiche con Alembic / Flyway"
+          ]
+        },
+        {
+          "heading": "API esterne",
+          "icon": "🌐",
+          "items": [
+            "Passa la spec OpenAPI o un esempio reale di risposta",
+            "Includi swagger.json o un campione di risposta",
+            "L'IA genera il client, la gestione errori e la logica di retry",
+            "Chiedi tipizzazione forte (tipi TypeScript, modelli Pydantic)",
+            "Indica rate limit e metodo di autenticazione nel contesto"
+          ]
+        },
+        {
+          "heading": "NoSQL e Data Warehouse",
+          "icon": "📊",
+          "items": [
+            "Mostra un documento esempio reale dalla collezione",
+            "Per MongoDB: passa un documento JSON rappresentativo",
+            "BigQuery/Snowflake: condividi lo schema della tabella",
+            "L'IA suggerisce indici e partizionamento appropriati",
+            "Chiedi validazione dello schema se non c'è tipizzazione nativa"
+          ]
+        }
+      ]
+    }
+  ],
+  "m12": [
+    {
+      "title": "Dai all'IA esattamente le informazioni di cui ha bisogno",
+      "content": "Il contesto è il superpotere nascosto del vibe coding. Più è preciso, più utile è la risposta — senza allucinazioni.",
+      "columns": [
+        {
+          "heading": "Schema DB",
+          "icon": "🗃️",
+          "items": [
+            "DDL delle tabelle, relazioni e dati di esempio per query precise."
+          ]
+        },
+        {
+          "heading": "CSV / Excel",
+          "icon": "📊",
+          "items": [
+            "Prime righe + tipi di colonna. L'IA deduce le trasformazioni."
+          ]
+        },
+        {
+          "heading": "JSON / Log",
+          "icon": "📋",
+          "items": [
+            "Struttura del payload o un log di errore reale. Localizzazione esatta del bug."
+          ]
+        },
+        {
+          "heading": "Codice legacy",
+          "icon": "🏛️",
+          "items": [
+            "Il file completo o il frammento rilevante. Chiedi di rispettare lo stile."
+          ]
+        },
+        {
+          "heading": "Specifiche / RFC",
+          "icon": "📝",
+          "items": [
+            "Requisiti in testo. L'IA li converte in user story e codice."
+          ]
+        }
+      ],
+      "tips": [
+        "Dividi file grandi in sezioni logiche: modelli, servizi, route.",
+        "Includi solo il contesto rilevante al problema — non tutto il repo.",
+        "Usa commenti di intestazione: // File: src/services/user.service.ts",
+        "Per repo grandi: genera un ARCHITECTURE.md e passalo prima.",
+        "Finestra di contesto: ~200K token in Claude 3.5 — usali saggiamente.",
+        "Dai priorità al codice più recente e allo stack trace dell'errore."
+      ]
+    }
+  ],
+  "m13": [
+    {
+      "title": "Dal documento dei requisiti al codice funzionante",
+      "content": "PDF, specifiche tecniche e RFC sono il linguaggio del business. L'IA li traduce direttamente in codice — se sai come chiederlo.",
+      "pipeline": [
+        {
+          "stage": "INPUT",
+          "icon": "📄",
+          "label": "Carica il documento",
+          "items": [
+            "PDF dei requisiti funzionali",
+            "RFC tecnico (es. RFC 7519 JWT)",
+            "Spec di API esterna",
+            "Manuale utente esistente"
+          ]
+        },
+        {
+          "stage": "ANALISI",
+          "icon": "🔍",
+          "label": "Chiedi un'analisi strutturata",
+          "items": [
+            "'Elenca tutti i requisiti funzionali'",
+            "'Identifica le entità e le loro relazioni'",
+            "'Rileva le ambiguità e chiedi'",
+            "'Riassumi come user story BDD'"
+          ]
+        },
+        {
+          "stage": "OUTPUT",
+          "icon": "🚀",
+          "label": "Genera automaticamente",
+          "items": [
+            "Codice che implementa i requisiti",
+            "Test che verificano ogni user story",
+            "Diagramma di architettura Mermaid",
+            "Documentazione tecnica generata"
+          ]
+        }
+      ]
+    }
+  ],
+  "m14": [
+    {
+      "title": "L'IA vede ciò che vedi tu — e può replicarlo in codice",
+      "content": "I LLM multimodali comprendono immagini di interfacce, errori visivi e design — aprendo un flusso di lavoro completamente nuovo.",
+      "columns": [
+        {
+          "heading": "Screenshot di UI",
+          "icon": "🖼️",
+          "items": [
+            "Passa uno screenshot di Figma o dell'app esistente",
+            "L'IA genera l'HTML/CSS/React corrispondente con alta fedeltà visiva",
+            "\"Replica questo design in React con Tailwind. Rispetta spaziatura e palette colori.\""
+          ]
+        },
+        {
+          "heading": "Bug visivi",
+          "icon": "🐛",
+          "items": [
+            "Cattura il bug così come appare nel browser",
+            "L'IA identifica l'elemento interessato e propone il fix CSS o di logica",
+            "\"Questo componente sborda su mobile. Identifica il problema e correggilo.\""
+          ]
+        },
+        {
+          "heading": "Reverse engineering di UI",
+          "icon": "🔄",
+          "items": [
+            "Da un'app web o mobile esistente, l'IA deduce la struttura dei componenti",
+            "\"Analizza questa interfaccia e genera i componenti React necessari per replicarla.\""
+          ]
+        },
+        {
+          "heading": "Web scraping assistito",
+          "icon": "🌐",
+          "items": [
+            "Passa l'URL o l'HTML della pagina. L'IA genera lo scraper",
+            "\"Genera uno scraper Python/BeautifulSoup per estrarre i prodotti da questa pagina.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "m15": [
+    {
+      "title": "L'IA come architetto tecnico di soluzioni complete",
+      "content": "Il livello finale del vibe coding: non solo generare codice, ma progettare soluzioni end-to-end con analisi dei trade-off.",
+      "columns": [
+        {
+          "heading": "Progettazione completa di soluzioni",
+          "icon": "🏗️",
+          "items": [
+            "L'IA presenta opzioni con pro/contro",
+            "Seleziona quella ottimale con giustificazione",
+            "Genera il codice della soluzione scelta",
+            "Propone un piano di migrazione per i sistemi esistenti"
+          ]
+        },
+        {
+          "heading": "Analisi dei trade-off",
+          "icon": "⚖️",
+          "items": [
+            "Tabelle comparative automatiche",
+            "Analisi per dimensione: teorema CAP, costo, DX",
+            "Raccomandazioni quantificate con ragionamento"
+          ]
+        }
+      ]
+    }
+  ]
+}

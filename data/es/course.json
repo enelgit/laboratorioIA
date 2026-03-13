@@ -1,0 +1,119 @@
+{
+  "title": "Programación con Inteligencia Artificial",
+  "subtitle": "Vibe Coding — Del Prompt al Producto",
+  "tags": [
+    "Windsurf",
+    "Claude / GPT",
+    "Git & GitFlow",
+    "Prompt Engineering",
+    "Multimodalidad"
+  ],
+  "days": [
+    {
+      "day": 1,
+      "title": "Fundamentos",
+      "modules": [
+        {
+          "id": "m01",
+          "number": 1,
+          "title": "Introducción al desarrollo asistido por IA",
+          "completed": true
+        },
+        {
+          "id": "m02",
+          "number": 2,
+          "title": "Windsurf IDE",
+          "completed": true
+        },
+        {
+          "id": "m03",
+          "number": 3,
+          "title": "Primer proyecto",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Prompt Engineering y diseño",
+      "modules": [
+        {
+          "id": "m07",
+          "number": 7,
+          "title": "Prompt Engineering: Stack y arquitectura",
+          "completed": true
+        },
+        {
+          "id": "m08",
+          "number": 8,
+          "title": "IA como desarrollador junior",
+          "completed": true
+        },
+        {
+          "id": "m09",
+          "number": 9,
+          "title": "Resolución de problemas con razonamiento lógico",
+          "completed": true
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Control de versiones y despliegue",
+      "modules": [
+        {
+          "id": "m04",
+          "number": 4,
+          "title": "Git en proyectos con IA"
+        },
+        {
+          "id": "m05",
+          "number": 5,
+          "title": "GitFlow y despliegue asistido por IA"
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "title": "Entorno y datos",
+      "modules": [
+        {
+          "id": "m10",
+          "number": 10,
+          "title": "Entorno de desarrollo con IA"
+        },
+        {
+          "id": "m11",
+          "number": 11,
+          "title": "Conectando IA a fuentes de datos"
+        },
+        {
+          "id": "m12",
+          "number": 12,
+          "title": "Inyección de contexto"
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "title": "Técnicas avanzadas",
+      "modules": [
+        {
+          "id": "m13",
+          "number": 13,
+          "title": "Ficheros y documentación como contexto"
+        },
+        {
+          "id": "m14",
+          "number": 14,
+          "title": "Capturas de pantalla y contexto web"
+        },
+        {
+          "id": "m15",
+          "number": 15,
+          "title": "Resolución avanzada de problemas"
+        }
+      ]
+    }
+  ]
+}

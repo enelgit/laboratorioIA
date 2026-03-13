@@ -1,0 +1,833 @@
+{
+  "m01": [
+    {
+      "title": "What is AI-Driven Development?",
+      "content": "Code is no longer written line by line — it's described, iterated and validated. AI acts as the developer's technical co-author.",
+      "columns": [
+        {
+          "heading": "Copilots (Autocomplete)",
+          "icon": "⚡",
+          "items": [
+            "Complete code in real time as you type",
+            "Learn from the context of the open file",
+            "E.g. GitHub Copilot, Tabnine, Codeium",
+            "Lower latency, lower autonomy"
+          ]
+        },
+        {
+          "heading": "Autonomous Agents",
+          "icon": "🤖",
+          "items": [
+            "Execute complete tasks without constant supervision",
+            "Can read, create and modify files",
+            "Chain tool calls (terminal, web)",
+            "E.g. Cascade in Windsurf, Devin, Aider"
+          ]
+        },
+        {
+          "heading": "Chat-Based Coding",
+          "icon": "💬",
+          "items": [
+            "Conversation in natural language + code",
+            "Dev validates and pastes the result manually",
+            "Ideal for exploration and learning",
+            "E.g. Claude.ai, ChatGPT, Gemini"
+          ]
+        },
+        {
+          "heading": "Current Limitations",
+          "icon": "⚠️",
+          "items": [
+            "Hallucinations: plausible but incorrect code",
+            "Context window: forgets the start of the repo",
+            "Security risks: credentials, injections",
+            "Over-reliance without critical review"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "IDE, Agent and Model: three distinct layers",
+      "content": "The vibe coding stack has three clearly separated layers. Each can be swapped independently.",
+      "columns": [
+        {
+          "heading": "IDE",
+          "icon": "🖥️",
+          "items": [
+            "Development environment",
+            "Editor, terminal and UI where the dev interacts with the agent"
+          ]
+        },
+        {
+          "heading": "Agent",
+          "icon": "🤖",
+          "items": [
+            "Autonomous orchestrator",
+            "Decides actions, reads files and calls the model in a loop"
+          ]
+        },
+        {
+          "heading": "Model",
+          "icon": "🧠",
+          "items": [
+            "LLM Engine",
+            "Generates code and reasoning. Executes nothing on its own"
+          ]
+        }
+      ],
+      "table": {
+        "headers": [
+          {
+            "label": "IDE",
+            "sub": "Development environment",
+            "icon": "🖥️"
+          },
+          {
+            "label": "Agent",
+            "sub": "Autonomous orchestrator",
+            "icon": "🤖"
+          },
+          {
+            "label": "Model",
+            "sub": "LLM Engine",
+            "icon": "🧠"
+          }
+        ],
+        "rows": [
+          {
+            "label": "Windsurf stack",
+            "color": "#06b6d4",
+            "cells": [
+              {
+                "text": "Windsurf",
+                "color": "#06b6d4"
+              },
+              {
+                "text": "Cascade",
+                "color": "#a855f7"
+              },
+              {
+                "text": "Claude Opus 4.5",
+                "color": "#10b981"
+              }
+            ]
+          },
+          {
+            "label": "Kiro stack",
+            "color": "#f59e0b",
+            "cells": [
+              {
+                "text": "Kiro from AWS",
+                "color": "#06b6d4"
+              },
+              {
+                "text": "Kiro Agent",
+                "color": "#ec4899"
+              },
+              {
+                "text": "Claude Sonnet 4.5",
+                "color": "#10b981"
+              }
+            ]
+          },
+          {
+            "label": "VS Code stack",
+            "color": "#8b5cf6",
+            "cells": [
+              {
+                "text": "VS Code",
+                "color": "#06b6d4"
+              },
+              {
+                "text": "GitHub Copilot",
+                "color": "#a855f7"
+              },
+              {
+                "text": "GPT-4o / Sonnet",
+                "color": "#10b981"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "m02": [
+    {
+      "title": "Windsurf: The IDE that reasons about your codebase",
+      "content": "Windsurf doesn't just complete code — it understands the whole project, runs commands and makes architecture decisions.",
+      "diagram": {
+        "layers": [
+          {
+            "label": "LLM (Claude / GPT-4o)",
+            "desc": "Reasoning engine"
+          },
+          {
+            "label": "Cascade Agent",
+            "desc": "Coordinates tools"
+          },
+          {
+            "label": "Repo context",
+            "desc": "Files, deps, history"
+          },
+          {
+            "label": "IDE (Editor)",
+            "desc": "UI, terminal, extensions"
+          }
+        ]
+      },
+      "columns": [
+        {
+          "heading": "Multi-file Context",
+          "icon": "📂",
+          "items": [
+            "Reads the entire repository, not just the active file",
+            "Understands imports, dependencies and patterns"
+          ]
+        },
+        {
+          "heading": "Terminal Actions",
+          "icon": "🖥️",
+          "items": [
+            "Runs npm install, git, curl… without leaving the IDE",
+            "The agent closes the feedback loop"
+          ]
+        },
+        {
+          "heading": "Real-world use cases",
+          "icon": "🚀",
+          "items": [
+            "Complete REST APIs, large-scale refactors",
+            "Test generation, PR reviews"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "VS Code + GitHub Copilot: the open ecosystem",
+      "content": "VS Code with GitHub Copilot brings AI-assisted development to the world's most popular editor — with agent mode, multi-model support and deep extension integration.",
+      "diagram": {
+        "layers": [
+          {
+            "label": "LLM (GPT-4o / Claude / Gemini)",
+            "desc": "Selectable model engine"
+          },
+          {
+            "label": "GitHub Copilot Agent",
+            "desc": "Autonomous orchestrator"
+          },
+          {
+            "label": "Workspace context",
+            "desc": "Files, terminal, extensions, MCP"
+          },
+          {
+            "label": "VS Code (Editor)",
+            "desc": "UI, terminal, extension marketplace"
+          }
+        ]
+      },
+      "columns": [
+        {
+          "heading": "Agent Mode",
+          "icon": "🤖",
+          "items": [
+            "Copilot acts autonomously: reads files, runs commands, edits code",
+            "Iterative loop similar to Cascade but inside VS Code"
+          ]
+        },
+        {
+          "heading": "Multi-model",
+          "icon": "🧠",
+          "items": [
+            "Choose between GPT-4o, Claude Sonnet, Gemini and more",
+            "Switch models per task without changing IDE"
+          ]
+        },
+        {
+          "heading": "Extension Ecosystem",
+          "icon": "🧩",
+          "items": [
+            "Thousands of extensions: Docker, databases, linters, testing",
+            "MCP servers for custom tool integration"
+          ]
+        }
+      ]
+    }
+  ],
+  "m03": [
+    {
+      "title": "From zero to a working project in one session",
+      "content": "Tip: always start with an architecture prompt before asking for code. It changes everything.",
+      "steps": [
+        {
+          "number": 1,
+          "label": "Installation",
+          "desc": "Install VS Code and the GitHub Copilot extension. Sign in with your GitHub account and select a model (GPT-4o, Claude Sonnet)."
+        },
+        {
+          "number": 2,
+          "label": "Scaffolding",
+          "desc": "Open Copilot Chat in agent mode and ask: 'Create a Node/FastAPI project with Clean Architecture structure.'"
+        },
+        {
+          "number": 3,
+          "label": "README",
+          "desc": "Auto-generate the README: description, setup instructions, environment variables."
+        },
+        {
+          "number": 4,
+          "label": "Base code",
+          "desc": "AI generates routes, models, services. You review the logic and the API contract."
+        },
+        {
+          "number": 5,
+          "label": "Best practices",
+          "desc": "Folders /src /tests /docs. .env.example. .gitignore. Pre-commit hooks."
+        }
+      ]
+    }
+  ],
+  "m04": [
+    {
+      "title": "Version control when 80% of the code is written by AI",
+      "content": "AI generates code fast — without commit discipline, history becomes unmanageable. Git is still your safety net.",
+      "columns": [
+        {
+          "heading": "AI-oriented Git basics",
+          "icon": "📋",
+          "items": [
+            "git diff before every commit: review what the AI generated",
+            "Atomic commits: one concept per commit, not 'AI session dump'",
+            "git stash to pause changes while exploring alternatives",
+            "git bisect to find which generation broke something"
+          ]
+        },
+        {
+          "heading": "Working with generated code",
+          "icon": "🔍",
+          "items": [
+            "Never commit without reading the full diff",
+            "Use .gitignore to exclude AI temporary files",
+            "Tag working versions: git tag v0.1-working",
+            "Note the prompt that triggered the change in the commit message"
+          ]
+        },
+        {
+          "heading": "Avoiding junk commits",
+          "icon": "🧹",
+          "items": [
+            "Squash before merge: consolidate vibe coding sessions",
+            "Conventional Commits: feat:, fix:, refactor:, chore:",
+            "Pre-commit hooks: linting and tests before committing",
+            "Pair code review: human reviews what the AI generated"
+          ]
+        }
+      ]
+    }
+  ],
+  "m05": [
+    {
+      "title": "Professional branching and AI-assisted continuous delivery",
+      "content": "AI + CI/CD: ask Cascade to generate the GitHub Actions workflow, Dockerfile and deploy scripts automatically.",
+      "branches": [
+        {
+          "name": "main",
+          "color": "#e74c3c",
+          "desc": "Stable releases only. AI never touches main directly."
+        },
+        {
+          "name": "develop",
+          "color": "#3498db",
+          "desc": "Integration branch. AI proposes merges here."
+        },
+        {
+          "name": "feature",
+          "color": "#2ecc71",
+          "desc": "One branch per feature. AI works in its own feature branch."
+        },
+        {
+          "name": "hotfix",
+          "color": "#f39c12",
+          "desc": "Urgent branch from main. AI generates the fix, human approves."
+        }
+      ]
+    },
+    {
+      "title": "GitFlow: branch flow and deployment by environments",
+      "content": "Each branch maps to an environment. Changes flow from feature → develop → QA → main, going through validation at each stage before advancing.",
+      "flow_diagram": {
+        "description": "Code promotion flow between branches and environments",
+        "steps": [
+          {
+            "id": 1,
+            "branch": "feature/*",
+            "color": "#2ecc71",
+            "action": "Feature development",
+            "detail": "The developer (with AI assistance) works on their feature branch",
+            "arrow": "merge → develop"
+          },
+          {
+            "id": 2,
+            "branch": "develop",
+            "color": "#3498db",
+            "action": "Merge to develop + deploy to DEV",
+            "detail": "The feature is merged into develop. It is automatically deployed to the development environment for initial testing.",
+            "environment": "🖥️ DEV Environment",
+            "check": "✅ Verify everything works correctly",
+            "arrow": "merge → QA"
+          },
+          {
+            "id": 3,
+            "branch": "qa",
+            "color": "#9b59b6",
+            "action": "Merge to QA + deploy to QA",
+            "detail": "If DEV tests pass, the code is merged to the QA branch. It is deployed to the QA environment for more rigorous testing and validation.",
+            "environment": "🧪 QA Environment",
+            "check": "✅ Integration tests, quality review",
+            "arrow": "merge → main"
+          },
+          {
+            "id": 4,
+            "branch": "main",
+            "color": "#e74c3c",
+            "action": "Merge to main + deploy to PRODUCTION",
+            "detail": "Once validated in QA, the code is merged to main (production). It is deployed to the production environment as the stable release.",
+            "environment": "🚀 PRODUCTION Environment",
+            "check": "✅ Stable release, available to users"
+          }
+        ],
+        "summary": "feature → develop (DEV) → qa (QA) → main (PROD)"
+      },
+      "columns": [
+        {
+          "heading": "Why this flow?",
+          "icon": "💡",
+          "items": [
+            "Each environment acts as a quality filter",
+            "Bugs are caught before reaching production",
+            "Allows progressive validation: DEV → QA → PROD",
+            "The QA team works in an isolated and stable environment"
+          ]
+        },
+        {
+          "heading": "Key rules",
+          "icon": "📏",
+          "items": [
+            "Never push directly to main or QA",
+            "Only promote code that passed the previous environment's tests",
+            "Merges always go in one direction: develop → qa → main",
+            "Hotfixes are the exception: they go directly from main and are backported to develop"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "GitFlow: branch and environment diagram",
+      "content": "Complete view of the branching model. Each branch maps to an environment and changes only advance when they pass the previous environment's validation.",
+      "branch_diagram": {
+        "main_flow": [
+          { "branch": "feature/*", "color": "#2ecc71", "env": null, "desc": "Feature development" },
+          { "branch": "develop", "color": "#3498db", "env": "🖥️ DEV", "desc": "Integration & testing" },
+          { "branch": "qa", "color": "#9b59b6", "env": "🧪 QA", "desc": "Quality validation" },
+          { "branch": "main", "color": "#e74c3c", "env": "🚀 PROD", "desc": "Stable production" }
+        ],
+        "hotfix": {
+          "branch": "hotfix/*",
+          "color": "#f39c12",
+          "desc": "Urgent fix",
+          "flow": "main → hotfix → main + develop"
+        }
+      }
+    }
+  ],
+  "m07": [
+    {
+      "title": "How to guide AI to use YOUR technology stack",
+      "content": "Without context, AI picks the most popular stack on the internet. With the right prompt, it respects your technical decisions.",
+      "prompts": [
+        {
+          "label": "Stack Prompt",
+          "icon": "🛠️",
+          "text": "\"Use Python 3.11 + FastAPI + SQLAlchemy + PostgreSQL. Do NOT use Django. Structure the project with Clean Architecture: domain, application, infrastructure, interfaces.\""
+        },
+        {
+          "label": "Architecture Prompt",
+          "icon": "🏗️",
+          "text": "\"Design the layer diagram first before writing any code. Separate business logic from persistence. Services must not import ORM models directly.\""
+        },
+        {
+          "label": "Enforcing Patterns",
+          "icon": "📐",
+          "text": "\"Apply DDD: entities, aggregates, value objects, repositories. Use domain events to communicate changes between bounded contexts.\""
+        }
+      ]
+    },
+    {
+      "title": "Project Kickoff Prompt Template",
+      "content": "Always start a new project with a structured prompt. This template ensures the AI understands your full context from the very first message.",
+      "prompts": [
+        {
+          "icon": "🚀",
+          "label": "1. New Project Declaration",
+          "text": "We are starting a new project: [PROJECT NAME]\nThis will be a [web app / API / mobile app / CLI tool]."
+        },
+        {
+          "icon": "📋",
+          "label": "2. Functional Description",
+          "text": "Functional description:\n- The application must allow [main functionality]\n- Users can [key user actions]\n- The system should [expected behaviors]\n- Main entities: [list entities and relationships]"
+        },
+        {
+          "icon": "🛠️",
+          "label": "3. Technology Stack",
+          "text": "Technologies:\n- Frontend: [React / Vue / Vanilla JS / etc.] with [CSS framework]\n- Backend: [Python FastAPI / Node Express / etc.]\n- Database: [PostgreSQL / MongoDB / in-memory]\n- Other: [Docker, Redis, etc.]"
+        },
+        {
+          "icon": "⚙️",
+          "label": "4. Technical Guidelines",
+          "text": "Technical guidelines:\n- DO NOT use [excluded libs/patterns]\n- All API responses must follow [format]\n- Start with [entry point / folder structure]\n- Error handling: [strategy]\n- The app must [key non-functional requirement]"
+        }
+      ],
+      "columns": [
+        {
+          "heading": "Why this works",
+          "icon": "💡",
+          "items": [
+            "Eliminates ambiguity from the first message",
+            "AI generates code aligned with your real constraints",
+            "Saves hours of corrections and back-and-forth"
+          ]
+        },
+        {
+          "heading": "Pro tips",
+          "icon": "🎯",
+          "items": [
+            "Be specific: 'FastAPI 0.115' beats 'Python backend'",
+            "Mention exclusions explicitly: 'Do NOT use SQLAlchemy'",
+            "Define the starting behavior: 'Start the server on port 8000'"
+          ]
+        }
+      ]
+    }
+  ],
+  "m08": [
+    {
+      "title": "AI-guided programming: design before code",
+      "content": "The most common mistake: asking for code before agreeing on the design. AI is the best junior in the world if you know how to direct it.",
+      "columns": [
+        {
+          "heading": "Design First",
+          "icon": "🏗️",
+          "items": [
+            "Ask for class/sequence diagram before code",
+            "Validate architecture with the team",
+            "Only then ask for implementation",
+            "Avoids costly refactors"
+          ]
+        },
+        {
+          "heading": "Tests First (TDD)",
+          "icon": "🧪",
+          "items": [
+            "'Write unit tests before the code'",
+            "Tests act as executable specification",
+            "AI implements to pass the tests",
+            "Automatic coverage from the start"
+          ]
+        },
+        {
+          "heading": "Auto Documentation",
+          "icon": "📄",
+          "items": [
+            "'Generate docstrings in Google/NumPy format'",
+            "README, OpenAPI spec, Mermaid diagrams",
+            "Automatic changelog from commits",
+            "Documentation always up to date"
+          ]
+        },
+        {
+          "heading": "Role Prompting",
+          "icon": "🎭",
+          "items": [
+            "'Act as Senior Architect: review this design'",
+            "'As Security Expert: find vulnerabilities'",
+            "'As QA Engineer: write the test cases'",
+            "Change perspective based on the goal"
+          ]
+        }
+      ]
+    }
+  ],
+  "m09": [
+    {
+      "title": "AI-guided debugging and refactoring",
+      "content": "Chain-of-thought: by asking for explicit reasoning, AI makes up to 40% fewer errors on complex problems.",
+      "prompts": [
+        {
+          "label": "Step-by-step Debugging",
+          "icon": "🐛",
+          "text": "\"Analyze this error step by step. First identify the error type, then locate the origin line, then trace the execution flow to the failure point.\""
+        },
+        {
+          "label": "Explained Refactoring",
+          "icon": "🔄",
+          "text": "\"Refactor this function. Explain each change you make and why it improves readability or performance.\""
+        },
+        {
+          "label": "Active Bug Hunting",
+          "icon": "🎯",
+          "text": "\"Act as a QA expert. Review this code looking for: logic errors, uncovered edge cases, possible null pointers and race conditions.\""
+        }
+      ]
+    }
+  ],
+  "m10": [
+    {
+      "title": "Configure your workspace so AI understands everything",
+      "content": "AI is only as good as the context you give it. A well-documented environment multiplies the quality of responses.",
+      "columns": [
+        {
+          "heading": "Workspace Configuration",
+          "icon": "⚙️",
+          "items": [
+            "Create a CONTEXT.md at the root: describe the project, stack and conventions",
+            "Use .windsurfrules for permanent agent rules",
+            "Define key paths: src, tests, config",
+            "Include real code examples of the expected style"
+          ]
+        },
+        {
+          "heading": "Environment Variables",
+          "icon": "🔑",
+          "items": [
+            "Documented .env.example with all vars",
+            "Never pass real API key values to AI",
+            "Describe the purpose of each variable in comments",
+            "Use direnv or dotenv for automatic local loading"
+          ]
+        },
+        {
+          "heading": "Reproducibility",
+          "icon": "🐳",
+          "items": [
+            "Docker Compose for all local infrastructure",
+            "Makefiles with standard commands: make dev, make test",
+            "Pinned versions: requirements.txt, package-lock.json",
+            "devcontainer.json for identical team environments"
+          ]
+        },
+        {
+          "heading": "Describing the Environment to AI",
+          "icon": "📝",
+          "items": [
+            "At session start: 'We are on Python 3.11, Docker, macOS ARM'",
+            "Include output of uname -a, python --version in context",
+            "Mention limitations: no internet access, no sudo",
+            "AI adapts its commands and paths to the real environment"
+          ]
+        }
+      ]
+    }
+  ],
+  "m11": [
+    {
+      "title": "Generating code over real data",
+      "content": "AI can generate queries, migrations and transformations — but it needs to know the exact schema of your data.",
+      "columns": [
+        {
+          "heading": "Relational Databases",
+          "icon": "🗄️",
+          "items": [
+            "Pass the full DDL: CREATE TABLE users (...)",
+            "Export schema with \\d+ (psql) or SHOW CREATE TABLE",
+            "Include indexes and foreign keys — AI uses them for optimal queries",
+            "Ask for explained queries: 'generate and explain each join'",
+            "Request automatic Alembic / Flyway migrations"
+          ]
+        },
+        {
+          "heading": "External APIs",
+          "icon": "🌐",
+          "items": [
+            "Pass the OpenAPI spec or a real response example",
+            "Include swagger.json or a response sample",
+            "AI generates the client, error handling and retry logic",
+            "Ask for strong typing (TypeScript types, Pydantic models)",
+            "Indicate rate limits and auth method in context"
+          ]
+        },
+        {
+          "heading": "NoSQL and Data Warehouses",
+          "icon": "📊",
+          "items": [
+            "Show a real example document from the collection",
+            "For MongoDB: pass a representative JSON doc",
+            "BigQuery/Snowflake: share the table schema",
+            "AI suggests appropriate indexes and partitioning",
+            "Ask for schema validation if there is no native typing"
+          ]
+        }
+      ]
+    }
+  ],
+  "m12": [
+    {
+      "title": "Give AI exactly the information it needs",
+      "content": "Context is the hidden superpower of vibe coding. The more precise it is, the more useful the response — with no hallucinations.",
+      "columns": [
+        {
+          "heading": "DB Schema",
+          "icon": "🗃️",
+          "items": [
+            "Table DDL, relationships and sample data for precise queries."
+          ]
+        },
+        {
+          "heading": "CSV / Excel",
+          "icon": "📊",
+          "items": [
+            "First rows + column types. AI infers the transformations."
+          ]
+        },
+        {
+          "heading": "JSON / Logs",
+          "icon": "📋",
+          "items": [
+            "Payload structure or a real error log. Exact bug location."
+          ]
+        },
+        {
+          "heading": "Legacy code",
+          "icon": "🏛️",
+          "items": [
+            "The full file or the relevant fragment. Ask it to respect the style."
+          ]
+        },
+        {
+          "heading": "Specs / RFCs",
+          "icon": "📝",
+          "items": [
+            "Requirements in text. AI converts them into user stories and code."
+          ]
+        }
+      ],
+      "tips": [
+        "Split large files into logical sections: models, services, routes.",
+        "Include only the context relevant to the problem — not the whole repo.",
+        "Use header comments: // File: src/services/user.service.ts",
+        "For large repos: generate an ARCHITECTURE.md and pass it first.",
+        "Context window: ~200K tokens in Claude 3.5 — use them wisely.",
+        "Prioritize the most recent code and the error stack trace."
+      ]
+    }
+  ],
+  "m13": [
+    {
+      "title": "From requirements document to working code",
+      "content": "PDFs, technical specs and RFCs are the language of business. AI translates them directly into code — if you know how to ask.",
+      "pipeline": [
+        {
+          "stage": "INPUT",
+          "icon": "📄",
+          "label": "Upload the document",
+          "items": [
+            "Functional requirements PDF",
+            "Technical RFC (e.g. RFC 7519 JWT)",
+            "External API spec",
+            "Existing user manual"
+          ]
+        },
+        {
+          "stage": "ANALYSIS",
+          "icon": "🔍",
+          "label": "Ask for structured analysis",
+          "items": [
+            "'List all functional requirements'",
+            "'Identify entities and their relationships'",
+            "'Detect ambiguities and ask'",
+            "'Summarize as BDD user stories'"
+          ]
+        },
+        {
+          "stage": "OUTPUT",
+          "icon": "🚀",
+          "label": "Generate automatically",
+          "items": [
+            "Code that implements the requirements",
+            "Tests that verify each user story",
+            "Mermaid architecture diagram",
+            "Generated technical documentation"
+          ]
+        }
+      ]
+    }
+  ],
+  "m14": [
+    {
+      "title": "AI sees what you see — and can replicate it in code",
+      "content": "Multimodal LLMs understand images of interfaces, visual errors and designs — opening a completely new workflow.",
+      "columns": [
+        {
+          "heading": "UI Screenshots",
+          "icon": "🖼️",
+          "items": [
+            "Pass a Figma screenshot or the existing app",
+            "AI generates the corresponding HTML/CSS/React with high visual fidelity",
+            "\"Replicate this design in React with Tailwind. Respect spacing and colour palette.\""
+          ]
+        },
+        {
+          "heading": "Visual Bugs",
+          "icon": "🐛",
+          "items": [
+            "Screenshot the bug as it appears in the browser",
+            "AI identifies the affected element and proposes the CSS or logic fix",
+            "\"This component overflows on mobile. Identify the problem and fix it.\""
+          ]
+        },
+        {
+          "heading": "UI Reverse Engineering",
+          "icon": "🔄",
+          "items": [
+            "From an existing web or mobile app, AI deduces the component structure",
+            "\"Analyze this interface and generate the React components needed to replicate it.\""
+          ]
+        },
+        {
+          "heading": "Assisted Web Scraping",
+          "icon": "🌐",
+          "items": [
+            "Pass the URL or page HTML. AI generates the scraper",
+            "\"Generate a Python/BeautifulSoup scraper to extract the products from this page.\""
+          ]
+        }
+      ]
+    }
+  ],
+  "m15": [
+    {
+      "title": "AI as technical architect of complete solutions",
+      "content": "The final level of vibe coding: not just generating code, but designing end-to-end solutions with trade-off analysis.",
+      "columns": [
+        {
+          "heading": "Full Solution Design",
+          "icon": "🏗️",
+          "items": [
+            "AI presents options with pros/cons",
+            "Selects the optimal one with justification",
+            "Generates the code for the chosen solution",
+            "Proposes a migration plan for existing systems"
+          ]
+        },
+        {
+          "heading": "Trade-off Analysis",
+          "icon": "⚖️",
+          "items": [
+            "Automatic comparison tables",
+            "Analysis by dimension: CAP theorem, cost, DX",
+            "Quantified recommendations with reasoning"
+          ]
+        }
+      ]
+    }
+  ]
+}

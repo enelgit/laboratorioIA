@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Coding — AI Programming Course</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+
+  <!-- Top navigation -->
+  <nav class="top-nav">
+    <ul>
+      <li><strong class="brand">⚡ Vibe Coding</strong></li>
+    </ul>
+    <ul>
+      <li><button class="btn-mode active" data-mode="presentation" onclick="switchMode('presentation')">📽️ <span data-i18n="presentation">Presentation</span></button></li>
+      <li><button class="btn-mode" data-mode="lab" onclick="switchMode('lab')">🧪 <span data-i18n="laboratory">Laboratory</span></button></li>
+      <li>
+        <select class="lang-select" id="lang-select" onchange="changeLang(this.value)">
+          <option value="en">🇬🇧 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="pt" selected>🇧🇷 Português</option>
+          <option value="it">🇮🇹 Italiano</option>
+        </select>
+      </li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌓</button></li>
+      <li><button class="info-btn" onclick="toggleInfoModal()" aria-label="Info"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></button></li>
+    </ul>
+  </nav>
+
+  <!-- Info modal -->
+  <div class="info-overlay hidden" id="info-overlay" onclick="toggleInfoModal()">
+    <div class="info-modal" onclick="event.stopPropagation()">
+      <button class="info-close" onclick="toggleInfoModal()">&times;</button>
+      <div class="info-icon">⚡</div>
+      <h2>Vibe Coding Platform</h2>
+      <p class="info-version">v1.0.0</p>
+      <div class="info-ai-badge">🤖 <span data-i18n="infoAiBadge">YES! I'm made completely with AI!</span></div>
+      <hr />
+      <ul class="info-details">
+        <li>🎯 <strong data-i18n="infoTech">Tech Stack</strong>: Python · FastAPI · Vanilla JS · Pico CSS</li>
+        <li>🌐 <strong data-i18n="infoLangs">Languages</strong>: English · Español · Português · Italiano</li>
+        <li>📚 <strong data-i18n="infoContent">Content</strong>: 5 <span data-i18n="infoDays">days</span> · 15 <span data-i18n="infoModules">modules</span> · 5 <span data-i18n="infoLabs">labs</span></li>
+        <li>🛠️ <strong data-i18n="infoBuilt">Built with</strong>: GitHub Copilot + Claude</li>
+        <li>✍️ <strong data-i18n="infoAuthor">Author</strong>: Fran Martínez</li>
+      </ul>
+      <hr />
+      <p class="info-footer" data-i18n="infoFooter">An AI-assisted development course platform — taught and built the vibe coding way.</p>
+    </div>
+  </div>
+
+  <div class="app-layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>Course Modules</h3>
+      </div>
+      <nav id="course-nav"></nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content" id="main-content">
+      <!-- Landing page -->
+      <div id="landing" class="landing">
+        <div class="hero">
+          <p class="overline">TECHNICAL TRAINING · 5 DAYS · 15 MODULES</p>
+          <h1></h1>
+          <p class="subtitle"></p>
+          <div class="tags" id="tags"></div>
+        </div>
+        <div class="day-grid" id="day-grid"></div>
+      </div>
+
+      <!-- Presentation view -->
+      <div id="presentation-view" class="view hidden">
+        <div class="slide-container">
+          <div class="slide-header">
+            <span class="slide-badge" id="slide-badge"></span>
+            <h2 id="slide-title"></h2>
+          </div>
+          <p class="slide-subtitle" id="slide-subtitle"></p>
+          <div id="slide-body"></div>
+        </div>
+        <div class="slide-nav">
+          <button onclick="prevSlide()" id="btn-prev" class="outline">← Previous</button>
+          <span id="slide-counter"></span>
+          <button onclick="nextSlide()" id="btn-next" class="outline">Next →</button>
+        </div>
+      </div>
+
+      <!-- Lab view -->
+      <div id="lab-view" class="view hidden">
+        <div class="lab-container">
+          <div class="lab-header">
+            <h2 id="lab-title"></h2>
+            <p id="lab-objective"></p>
+            <span class="lab-duration" id="lab-duration"></span>
+          </div>
+          <div id="lab-exercises"></div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Keyboard shortcuts toast -->
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
